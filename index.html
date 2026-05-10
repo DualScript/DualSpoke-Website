@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -10,227 +11,303 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --bg: #080d14;
-    --border: rgba(255,255,255,0.07);
-    --accent: #3ecfff;
-    --text: #f0f0ee;
-    --muted: #5a6475;
-    --mono: 'DM Mono', monospace;
-  }
+:root {
+–bg: #080d14;
+–border: rgba(255,255,255,0.07);
+–border-mid: rgba(255,255,255,0.05);
+–accent: #3ecfff;
+–accent-dim: rgba(62,207,255,0.18);
+–accent-glow: rgba(62,207,255,0.06);
+–text: #f0f0ee;
+–muted: #68778a;
+–mono: ‘DM Mono’, monospace;
+}
 
-  html, body {
-    height: 100dvh;
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--mono);
-    overflow-x: hidden;
-  }
+html, body {
+height: 100dvh;
+background: var(–bg);
+color: var(–text);
+font-family: var(–mono);
+overflow-x: hidden;
+}
 
-  body {
-    min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-  }
+body {
+min-height: 100dvh;
+display: flex;
+flex-direction: column;
+position: relative;
+}
 
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(62,207,255,0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(62,207,255,0.025) 1px, transparent 1px);
-    background-size: 60px 60px;
-    pointer-events: none;
-    z-index: 0;
-  }
+/* Infrastructure grid — slightly more visible so it reads as intentional texture */
+body::before {
+content: ‘’;
+position: fixed;
+inset: 0;
+background-image:
+linear-gradient(rgba(62,207,255,0.032) 1px, transparent 1px),
+linear-gradient(90deg, rgba(62,207,255,0.032) 1px, transparent 1px);
+background-size: 60px 60px;
+pointer-events: none;
+z-index: 0;
+}
 
-  .orb {
-    position: fixed;
-    border-radius: 50%;
-    filter: blur(120px);
-    pointer-events: none;
-    z-index: 0;
-  }
-  .orb-1 {
-    width: 600px; height: 600px;
-    background: #0044aa;
-    opacity: 0.2;
-    top: -200px; left: -150px;
-    animation: drift1 20s ease-in-out infinite alternate;
-  }
-  .orb-2 {
-    width: 400px; height: 400px;
-    background: #003366;
-    opacity: 0.15;
-    bottom: -100px; right: -80px;
-    animation: drift2 25s ease-in-out infinite alternate;
-  }
+/* Subtle grain overlay for tactile depth */
+body::after {
+content: ‘’;
+position: fixed;
+inset: 0;
+background-image: url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 256 256’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cfilter id=‘noise’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=‘0.9’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23noise)’ opacity=‘1’/%3E%3C/svg%3E”);
+background-size: 256px 256px;
+opacity: 0.025;
+pointer-events: none;
+z-index: 0;
+}
 
-  @keyframes drift1 {
-    from { transform: translate(0,0) scale(1); }
-    to   { transform: translate(60px,80px) scale(1.1); }
-  }
-  @keyframes drift2 {
-    from { transform: translate(0,0); }
-    to   { transform: translate(-60px,-60px); }
-  }
+/* Ambient orbs */
+.orb {
+position: fixed;
+border-radius: 50%;
+filter: blur(120px);
+pointer-events: none;
+z-index: 0;
+}
+.orb-1 {
+width: 640px; height: 640px;
+background: radial-gradient(circle, #0055cc 0%, #001f55 70%);
+opacity: 0.22;
+top: -220px; left: -160px;
+animation: drift1 22s ease-in-out infinite alternate;
+}
+.orb-2 {
+width: 420px; height: 420px;
+background: radial-gradient(circle, #002a55 0%, #001020 70%);
+opacity: 0.18;
+bottom: -120px; right: -90px;
+animation: drift2 28s ease-in-out infinite alternate;
+}
+/* Third orb: faint central depth anchor */
+.orb-3 {
+width: 500px; height: 300px;
+background: radial-gradient(ellipse, #003380 0%, transparent 70%);
+opacity: 0.09;
+bottom: 15%; left: 50%;
+transform: translateX(-50%);
+animation: drift3 35s ease-in-out infinite alternate;
+}
 
-  main {
-    position: relative;
-    z-index: 1;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 3rem 2rem;
-    text-align: center;
-  }
+@keyframes drift1 {
+from { transform: translate(0,0) scale(1); }
+to   { transform: translate(60px,80px) scale(1.08); }
+}
+@keyframes drift2 {
+from { transform: translate(0,0); }
+to   { transform: translate(-60px,-60px); }
+}
+@keyframes drift3 {
+from { transform: translateX(-50%) scale(1); }
+to   { transform: translateX(-48%) scale(1.15); }
+}
 
-  .tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--mono);
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--accent);
-    border: 1px solid rgba(62,207,255,0.2);
-    padding: 6px 16px;
-    border-radius: 100px;
-    margin-bottom: 2.5rem;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.2s forwards;
-  }
+main {
+position: relative;
+z-index: 1;
+flex: 1;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 3rem 2rem;
+text-align: center;
+}
 
-  .tag::before {
-    content: '';
-    width: 6px; height: 6px;
-    background: var(--accent);
-    border-radius: 50%;
-    animation: pulse 2s ease-in-out infinite;
-  }
+/* Coming soon badge */
+.tag {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+font-family: var(–mono);
+font-size: 11px;
+font-weight: 400;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(–accent);
+background: var(–accent-glow);
+border: 1px solid var(–accent-dim);
+padding: 6px 16px;
+border-radius: 100px;
+margin-bottom: 2.5rem;
+opacity: 0;
+animation: fadeUp 0.8s 0.2s forwards;
+}
 
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50%       { opacity: 0.3; transform: scale(0.6); }
-  }
+.tag::before {
+content: ‘’;
+width: 6px; height: 6px;
+background: var(–accent);
+border-radius: 50%;
+box-shadow: 0 0 6px var(–accent);
+animation: pulse 2s ease-in-out infinite;
+}
 
-  .logo-wrap {
-    opacity: 0;
-    animation: fadeUp 1s 0.4s forwards;
-    margin-bottom: 2rem;
-    width: min(520px, 88vw);
-  }
+@keyframes pulse {
+0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 6px var(–accent); }
+50%       { opacity: 0.35; transform: scale(0.6); box-shadow: 0 0 2px var(–accent); }
+}
 
-  .logo-wrap svg {
-    width: 100%;
-    height: auto;
-  }
+/* Logo */
+.logo-wrap {
+opacity: 0;
+animation: fadeUp 1s 0.4s forwards;
+margin-bottom: 2rem;
+width: min(520px, 88vw);
+}
 
-  .desc {
-    font-family: var(--mono);
-    font-size: 14px;
-    font-weight: 300;
-    color: var(--muted);
-    max-width: 420px;
-    line-height: 1.8;
-    margin-bottom: 3.5rem;
-    opacity: 0;
-    animation: fadeUp 0.9s 0.7s forwards;
-  }
+.logo-wrap svg {
+width: 100%;
+height: auto;
+}
 
-  .divider {
-    width: 48px;
-    height: 1px;
-    background: var(--border);
-    margin: 0 auto 3rem;
-    opacity: 0;
-    animation: fadeUp 0.9s 0.9s forwards;
-  }
+/* Description */
+.desc {
+font-family: var(–mono);
+font-size: 15px;
+font-weight: 400;
+color: var(–muted);
+max-width: 420px;
+line-height: 1.85;
+margin-bottom: 3.5rem;
+opacity: 0;
+animation: fadeUp 0.9s 0.7s forwards;
+}
 
-  .pillars {
-    display: flex;
-    gap: 2.5rem;
-    opacity: 0;
-    animation: fadeUp 0.9s 1s forwards;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+/* Divider — gradient fade instead of flat rule */
+.divider {
+width: 120px;
+height: 1px;
+background: linear-gradient(90deg, transparent, var(–border) 30%, var(–border) 70%, transparent);
+margin: 0 auto 3rem;
+opacity: 0;
+animation: fadeUp 0.9s 0.9s forwards;
+}
 
-  .pillar {
-    text-align: left;
-    max-width: 155px;
-  }
+/* Pillars */
+.pillars {
+display: flex;
+gap: 2.5rem;
+opacity: 0;
+animation: fadeUp 0.9s 1s forwards;
+flex-wrap: wrap;
+justify-content: center;
+}
 
-  .pillar-icon {
-    font-size: 18px;
-    margin-bottom: 10px;
-    display: block;
-    color: var(--accent);
-    opacity: 0.7;
-  }
+.pillar {
+text-align: left;
+max-width: 160px;
+}
 
-  .pillar h3 {
-    font-family: var(--mono);
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--text);
-    margin-bottom: 6px;
-  }
+.pillar-icon {
+width: 20px;
+height: 20px;
+margin-bottom: 12px;
+display: block;
+color: var(–accent);
+opacity: 0.65;
+}
 
-  .pillar p {
-    font-size: 12px;
-    color: var(--muted);
-    line-height: 1.65;
-  }
+.pillar h3 {
+font-family: var(–mono);
+font-size: 12px;
+font-weight: 500;
+letter-spacing: 0.09em;
+text-transform: uppercase;
+color: var(–text);
+margin-bottom: 7px;
+}
 
-  footer {
-    position: relative;
-    z-index: 1;
-    padding: 1.25rem 2rem;
-    border-top: 1px solid var(--border);
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 0.05em;
-    text-align: center;
-  }
+.pillar p {
+font-size: 13px;
+font-weight: 300;
+color: var(–muted);
+line-height: 1.7;
+}
 
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(18px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+/* Footer */
+footer {
+position: relative;
+z-index: 1;
+padding: 1.25rem 2rem;
+border-top: 1px solid var(–border);
+font-size: 11px;
+color: var(–muted);
+letter-spacing: 0.05em;
+text-align: center;
+}
 
-  @media (max-height: 900px) {
-    main { padding: 1.5rem 2rem; }
-    .tag { margin-bottom: 1.5rem; }
-    .logo-wrap { margin-bottom: 1.25rem; }
-    .desc { margin-bottom: 2rem; line-height: 1.6; }
-    .divider { margin-bottom: 1.75rem; }
-    .pillars { gap: 1.75rem; }
-    .pillar-icon { margin-bottom: 6px; }
-  }
+footer a {
+color: var(–muted);
+text-decoration: none;
+letter-spacing: 0.05em;
+transition: color 0.2s ease;
+}
 
-  @media (max-height: 700px) {
-    main { padding: 1rem 2rem; }
-    .tag { margin-bottom: 1rem; }
-    .logo-wrap { margin-bottom: 1rem; }
-    .desc { margin-bottom: 1.5rem; }
-    .divider { margin-bottom: 1.25rem; }
-    .pillars { gap: 1.25rem; }
-  }
+footer a:hover {
+color: var(–accent);
+}
+
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(18px); }
+to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Compact viewports */
+@media (max-height: 900px) {
+main { padding: 1.5rem 2rem; }
+.tag { margin-bottom: 1.5rem; }
+.logo-wrap { margin-bottom: 1.25rem; }
+.desc { margin-bottom: 2rem; line-height: 1.7; font-size: 14px; }
+.divider { margin-bottom: 1.75rem; }
+.pillars { gap: 1.75rem; }
+.pillar-icon { margin-bottom: 8px; }
+}
+
+@media (max-height: 700px) {
+main { padding: 1rem 2rem; }
+.tag { margin-bottom: 1rem; }
+.logo-wrap { margin-bottom: 1rem; }
+.desc { margin-bottom: 1.5rem; font-size: 13px; }
+.divider { margin-bottom: 1.25rem; }
+.pillars { gap: 1.25rem; }
+}
+
+/* Narrow mobile — 2-col grid, third pillar spans full width */
+@media (max-width: 480px) {
+.pillars {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 1.75rem 2rem;
+width: 100%;
+max-width: 320px;
+}
+.pillar {
+max-width: none;
+}
+.pillar:last-child {
+grid-column: 1 / -1;
+max-width: 160px;
+margin: 0 auto;
+}
+.desc {
+font-size: 14px;
+}
+}
 </style>
+
 </head>
 <body>
 
 <div class="orb orb-1"></div>
 <div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
 
 <main>
   <div class="tag">Coming soon</div>
@@ -271,24 +348,39 @@
 
   <div class="pillars">
     <div class="pillar">
-      <span class="pillar-icon">⌘</span>
+      <svg class="pillar-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="2" y="13" width="3" height="5" rx="0.5" fill="currentColor"/>
+        <rect x="7" y="9" width="3" height="9" rx="0.5" fill="currentColor"/>
+        <rect x="12" y="5" width="3" height="13" rx="0.5" fill="currentColor"/>
+        <rect x="17" y="2" width="1" height="16" rx="0.5" fill="currentColor" opacity="0.4"/>
+        <polyline points="2,13 7,9 12,5 16,3" stroke="currentColor" stroke-width="1" fill="none" opacity="0.5"/>
+      </svg>
       <h3>Trading systems</h3>
       <p>Software infrastructure for systematic trading strategies.</p>
     </div>
     <div class="pillar">
-      <span class="pillar-icon">◈</span>
+      <svg class="pillar-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="2" y="2" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.25" fill="none"/>
+        <rect x="11" y="2" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.25" fill="none"/>
+        <rect x="2" y="11" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.25" fill="none"/>
+        <rect x="11" y="11" width="7" height="7" rx="1" fill="currentColor" opacity="0.5"/>
+      </svg>
       <h3>Financial software</h3>
       <p>Proprietary systems built for institutional-grade deployment.</p>
     </div>
     <div class="pillar">
-      <span class="pillar-icon">⟳</span>
+      <svg class="pillar-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.25" fill="none"/>
+        <ellipse cx="10" cy="10" rx="3.5" ry="7.5" stroke="currentColor" stroke-width="1" fill="none" opacity="0.5"/>
+        <line x1="2.5" y1="10" x2="17.5" y2="10" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+      </svg>
       <h3>Multi-asset</h3>
       <p>Built to support equities and futures environments.</p>
     </div>
   </div>
 </main>
 
-<footer>© 2026 DualScript LLC · <a href="mailto:info@dualscript.io" style="color:var(--muted);text-decoration:none;letter-spacing:0.05em;">info@dualscript.io</a></footer>
+<footer>© 2026 DualScript LLC · <a href="mailto:info@dualscript.io">info@dualscript.io</a></footer>
 
 </body>
 </html>

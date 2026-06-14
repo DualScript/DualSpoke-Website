@@ -19,9 +19,9 @@ Contact: info@dualscript.io
 - Framework: Next.js 14 App Router
 - Styling: Tailwind CSS v3
 - Language: TypeScript
-- Font: DM Mono via Google Fonts (weights 300, 400, 500)
+- Fonts: Inter (display) + DM Mono (body/labels) via next/font/google
 - Hosting: Vercel (auto-deploys on push to main)
-- Repo: GitHub private — dualscript-site
+- Repo: GitHub private — dualscript-site (DualScript-Dev org)
 
 ## Brand Colors
 --bg:           #080d14
@@ -34,8 +34,10 @@ Contact: info@dualscript.io
 --border-mid:   rgba(255,255,255,0.05)
 
 ## Typography
-Font: DM Mono, monospace — weights 300 (light), 400 (regular), 500 (medium)
-All text: DM Mono. No other typefaces.
+Display headings (h1, h2): Inter — weights 400, 500, 600, 700
+Body, nav, labels, badges, footer, code: DM Mono — weights 300, 400, 500
+Both fonts loaded via next/font/google in layout.tsx
+CSS variables: --font-inter, --font-dm-mono
 
 ## Logo Rules
 - Always rendered as an inline SVG — never an img tag, never an external file
@@ -72,9 +74,20 @@ Entrance animations:
 - Read CONTEXT.md and CONTENT.md before writing any code
 - Use the inline SVG logo from CONTENT.md verbatim — never replace it
 - Never change brand colors
+- h1 and h2 use Inter — do not override with DM Mono
+- All other text uses DM Mono — do not override with Inter
 - Never install UI libraries (no shadcn, no radix, no headlessui)
 - Never install animation libraries (no framer-motion, no gsap)
 - Never add database, auth, or API routes
 - All new files go inside src/
 - Do not modify next.config.ts, tailwind.config.ts, tsconfig.json, or package.json without explicit approval
 - Stop and ask before any action not covered by this file
+
+## Current Page Status
+- Homepage is live at dualscript.io
+- Single page: hero, products (3 cards), about, footer
+- No coming soon badge — this is a full company homepage
+- StencilMind card links to stencilmind.com (external)
+- Trading System and Field Service SaaS cards have no links (in development)
+- OG image not yet created — social sharing shows blank preview
+- Mobile responsive styles added but not fully tested

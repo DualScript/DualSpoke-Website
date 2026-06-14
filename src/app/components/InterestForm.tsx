@@ -34,26 +34,30 @@ export default function InterestForm() {
       margin: '0 auto',
       textAlign: 'center',
     }}>
-      <h2 style={{
-        fontSize: 'clamp(1.4rem, 3vw, 2rem)',
-        fontWeight: 600,
-        color: 'var(--text)',
-        marginBottom: '0.75rem',
-        fontFamily: 'var(--font-inter)',
-      }}>
-        Stay in the loop.
-      </h2>
-      <p style={{
-        fontSize: '14px',
-        fontWeight: 300,
-        color: 'var(--muted)',
-        lineHeight: 1.7,
-        marginBottom: '2rem',
-        fontFamily: 'var(--mono)',
-      }}>
-        Drop your email and tell us what you are interested in.
-        No spam. Just updates when something ships.
-      </p>
+      {status !== 'success' && (
+        <>
+          <h2 style={{
+            fontSize: 'clamp(1.4rem, 3vw, 2rem)',
+            fontWeight: 600,
+            color: 'var(--text)',
+            marginBottom: '0.75rem',
+            fontFamily: 'var(--font-inter)',
+          }}>
+            Stay in the loop.
+          </h2>
+          <p style={{
+            fontSize: '14px',
+            fontWeight: 300,
+            color: 'var(--muted)',
+            lineHeight: 1.7,
+            marginBottom: '2rem',
+            fontFamily: 'var(--mono)',
+          }}>
+            Drop your email and tell us what you are interested in.
+            No spam. Just updates when something ships.
+          </p>
+        </>
+      )}
 
       {status === 'success' ? (
         <div style={{

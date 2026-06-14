@@ -348,7 +348,7 @@ export default function Home() {
             style={{
               width: "100%",
               paddingTop: "1.5rem",
-              paddingBottom: "3rem",
+              paddingBottom: "1.5rem",
               position: "relative",
               zIndex: 1,
             }}
@@ -391,7 +391,7 @@ export default function Home() {
           <section
             style={{
               width: '100%',
-              padding: '4rem 2rem',
+              padding: '2rem 2rem',
               position: 'relative',
               zIndex: 1,
             }}

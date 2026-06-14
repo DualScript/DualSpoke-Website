@@ -5,8 +5,7 @@ export default function Home() {
       <div className="orb orb-2" aria-hidden="true" />
       <div className="orb orb-3" aria-hidden="true" />
 
-      <div className="relative z-10">
-        <nav
+      <nav
           className="sticky top-0 z-50 border-b backdrop-blur-md"
           style={{
             background: "rgba(8, 13, 20, 0.8)",
@@ -217,41 +216,6 @@ export default function Home() {
               </p>
             </div>
 
-            <div
-              style={{
-                position: "absolute",
-                bottom: "2rem",
-                left: "50%",
-                transform: "translateX(-50%)",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: "6px",
-                pointerEvents: "none",
-                zIndex: 2,
-              }}
-            >
-              <span
-                style={{
-                  fontSize: "9px",
-                  letterSpacing: "0.2em",
-                  color: "var(--muted)",
-                  fontFamily: "var(--mono)",
-                  textTransform: "uppercase",
-                }}
-              >
-                Scroll
-              </span>
-              <div
-                style={{
-                  width: "1px",
-                  height: "28px",
-                  background: "var(--accent)",
-                  opacity: 0.5,
-                  animation: "linePulse 2s ease-in-out infinite",
-                }}
-              />
-            </div>
           </section>
 
           <section
@@ -442,7 +406,6 @@ export default function Home() {
             </a>
           </div>
         </footer>
-      </div>
     </>
   );
 }

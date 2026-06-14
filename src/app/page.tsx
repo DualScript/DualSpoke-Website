@@ -225,24 +225,16 @@ export default function Home() {
             style={{
               width: "100%",
               paddingTop: "2.5rem",
-              paddingBottom: "2.5rem",
+              paddingBottom: "1.5rem",
               position: "relative",
               zIndex: 1,
             }}
           >
-            <div
-              style={{
-                maxWidth: "1100px",
-                width: "100%",
-                margin: "0 auto",
-                padding: "0 2rem",
-                boxSizing: "border-box",
-              }}
-            >
+            <div className="product-section-inner">
               <div
                 className="rounded-full px-4 py-1.5 text-[11px] uppercase tracking-[0.12em]"
                 style={{
-                  color: "var(--muted)",
+                  color: "rgba(255,255,255,0.45)",
                   border: "1px solid var(--border-mid)",
                   display: "inline-block",
                   marginBottom: "2rem",
@@ -354,7 +346,8 @@ export default function Home() {
           <section
             style={{
               width: "100%",
-              padding: "3rem 0",
+              paddingTop: "1.5rem",
+              paddingBottom: "3rem",
               position: "relative",
               zIndex: 1,
             }}

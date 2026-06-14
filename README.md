@@ -1,36 +1,39 @@
 # DualScript — dualscript.io
 
-Company website for **DualScript LLC**, a Wyoming-based software development company building proprietary tools for systematic trading and financial automation.
-
-## Status
-
-Currently in development. This repository hosts the public-facing website at [dualscript.io](https://dualscript.io).
+Company landing page for DualScript LLC.
 
 ## Stack
+- Next.js 14 (App Router)
+- Tailwind CSS v3
+- TypeScript
+- DM Mono + Inter (Google Fonts via next/font)
+- Hosted on Vercel
 
-- Static HTML/CSS/JS — no framework
-- Hosted on [Vercel](https://vercel.com)
-- Domain managed via Namecheap
-
-## Deployment
-
-This repo is connected to Vercel for continuous deployment. Any commit to `main` triggers an automatic redeploy — typically live within 30 seconds.
-
-## Structure
-
-```
-dualscript-site/
-└── index.html    # Main site (single page)
-```
+## Project Structure
+- src/app/page.tsx — main landing page component
+- src/app/layout.tsx — root layout, font loading, metadata
+- src/app/globals.css — CSS custom properties, keyframes, base styles
+- CONTEXT.md — persistent project context for Cursor sessions
+- CONTENT.md — all site copy and the inline SVG logo
 
 ## Local Development
+npm install
+npm run dev
 
-No build step required. Open `index.html` directly in any browser.
+Open http://localhost:3000
 
-## Contact
+## Deployment
+Connected to Vercel via GitHub. Push to main to deploy automatically.
 
-For inquiries: dev@dualscript.io
+## Design System
+Background: #080d14
+Accent: #3ecfff
+Text: #f0f0ee
+Muted: #68778a
+Headings: Inter (600)
+Body/Labels/Nav: DM Mono (300, 400, 500)
 
------
-
-© 2026 DualScript LLC. All rights reserved.
+## Company
+DualScript LLC — Wyoming
+dualscript.io
+info@dualscript.io

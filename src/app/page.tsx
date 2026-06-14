@@ -31,7 +31,8 @@ export default function Home() {
         </nav>
 
         <main>
-          <section className="relative z-[1] flex min-h-[100dvh] flex-col items-center justify-center px-8 text-center">
+          <section className="relative z-[1] min-h-[100dvh]">
+            <div className="flex min-h-[100dvh] flex-col items-center justify-center px-8 text-center">
             <div
               className="animate-fade-up mb-10 w-full"
               style={{
@@ -156,7 +157,7 @@ export default function Home() {
             </div>
 
             <h1
-              className="animate-fade-up max-w-[780px] text-[clamp(2.2rem,5vw,4rem)] font-medium leading-[1.15] tracking-[-0.02em]"
+              className="animate-fade-up max-w-[780px] text-[clamp(2rem,4vw,3.2rem)] font-medium leading-[1.2] tracking-[-0.02em]"
               style={{ color: "var(--text)", animationDelay: "0.7s" }}
             >
               Built for{" "}
@@ -172,23 +173,28 @@ export default function Home() {
               workflow problems. Not platforms. Not suites. One product, one
               problem, done well.
             </p>
+            </div>
 
             <div
-              className="animate-fade-up absolute bottom-8 flex flex-col items-center gap-3"
-              style={{ animationDelay: "1.2s" }}
+              className="absolute bottom-[2.5rem] left-1/2 -translate-x-1/2"
             >
-              <span
-                className="text-[10px] uppercase tracking-[0.15em]"
-                style={{ color: "var(--muted)" }}
+              <div
+                className="animate-fade-up flex flex-col items-center gap-2"
+                style={{ animationDelay: "1.2s" }}
               >
-                scroll
-              </span>
-              <div className="scroll-line" aria-hidden="true" />
+                <span
+                  className="text-[10px] uppercase tracking-[0.15em]"
+                  style={{ color: "var(--muted)" }}
+                >
+                  scroll
+                </span>
+                <div className="scroll-line" aria-hidden="true" />
+              </div>
             </div>
           </section>
 
-          <section id="products" className="px-8 py-28">
-            <div className="mx-auto max-w-[1100px]">
+          <section id="products" className="w-full">
+            <div className="mx-auto w-full max-w-[1100px] px-8 py-28">
               <div
                 className="mb-12 inline-flex rounded-full px-4 py-1.5 text-[11px] uppercase tracking-[0.12em]"
                 style={{
@@ -297,11 +303,13 @@ export default function Home() {
             </div>
           </section>
 
-          <section
-            className="px-8 py-28"
-            style={{ borderTop: "1px solid var(--border)" }}
-          >
-            <div className="mx-auto max-w-[720px] text-center">
+          <section className="w-full">
+            <div className="mx-auto w-full max-w-[720px] px-8 py-28 text-center">
+              <div
+                className="mx-auto mb-16 h-px w-[120px]"
+                style={{ background: "var(--border)" }}
+                role="presentation"
+              />
               <h2
                 className="mb-6 text-[clamp(1.5rem,3vw,2.2rem)] font-medium"
                 style={{ color: "var(--text)" }}
@@ -322,14 +330,16 @@ export default function Home() {
         </main>
 
         <footer
-          className="px-8 py-6"
-          style={{ borderTop: "1px solid var(--border)" }}
+          style={{
+            borderTop: "1px solid var(--border)",
+            padding: "1.5rem 2rem",
+          }}
         >
-          <div className="mx-auto flex max-w-[1100px] flex-col items-center gap-3 text-center text-xs md:flex-row md:justify-between md:text-left">
-            <span style={{ color: "var(--muted)" }}>© 2026 DualScript LLC</span>
-            <span style={{ color: "var(--muted)" }}>
-              Wyoming LLC · Built in the US
-            </span>
+          <div
+            className="mx-auto flex max-w-[1100px] flex-col items-center gap-2 text-center text-xs md:flex-row md:items-center md:justify-between"
+            style={{ color: "var(--muted)" }}
+          >
+            <span>© 2026 DualScript LLC</span>
             <a
               href="mailto:info@dualscript.io"
               className="transition-colors duration-200 hover:text-[var(--accent)]"

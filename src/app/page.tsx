@@ -194,7 +194,6 @@ export default function Home() {
                   lineHeight: 1.2,
                   letterSpacing: "-0.02em",
                   marginBottom: "1.5rem",
-                  fontFamily: "var(--mono)",
                 }}
               >
                 Built for{" "}

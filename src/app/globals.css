@@ -1,3 +1,173 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --bg: #080d14;
+  --accent: #3ecfff;
+  --accent-dim: rgba(62, 207, 255, 0.18);
+  --accent-glow: rgba(62, 207, 255, 0.06);
+  --text: #f0f0ee;
+  --muted: #68778a;
+  --border: rgba(255, 255, 255, 0.07);
+  --border-mid: rgba(255, 255, 255, 0.05);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: DM Mono, monospace;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(62, 207, 255, 0.032) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(62, 207, 255, 0.032) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drift1 {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(48px, 36px) scale(1.06);
+  }
+}
+
+@keyframes drift2 {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-36px, -28px);
+  }
+}
+
+@keyframes drift3 {
+  from {
+    transform: translateX(-50%) scale(1);
+  }
+  to {
+    transform: translateX(calc(-50% + 32px)) scale(1.04);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.85);
+  }
+}
+
+@keyframes linePulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.9s ease forwards;
+  opacity: 0;
+}
+
+.orb {
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(80px);
+}
+
+.orb-1 {
+  width: 640px;
+  height: 640px;
+  background: radial-gradient(circle, #0055cc, #001f55);
+  opacity: 0.22;
+  top: -12%;
+  left: -8%;
+  animation: drift1 22s ease-in-out infinite alternate;
+}
+
+.orb-2 {
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, #002a55, #001020);
+  opacity: 0.18;
+  bottom: -8%;
+  right: -6%;
+  animation: drift2 28s ease-in-out infinite alternate;
+}
+
+.orb-3 {
+  width: 500px;
+  height: 300px;
+  background: radial-gradient(ellipse, #003380, transparent);
+  opacity: 0.09;
+  bottom: 8%;
+  left: 50%;
+  animation: drift3 35s ease-in-out infinite alternate;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 2rem;
+  background-color: var(--accent);
+  animation: linePulse 2.4s ease-in-out infinite;
+}
+
+.pulse-dot {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.product-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.product-card:hover {
+  border-color: var(--accent-dim);
+  background: rgba(62, 207, 255, 0.04);
+}

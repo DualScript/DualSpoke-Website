@@ -34,14 +34,14 @@ export default function Home() {
             style={{
               position: "relative",
               width: "100%",
-              minHeight: "calc(100vh - 56px)",
+              minHeight: "auto",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               overflow: "hidden",
               zIndex: 1,
-              paddingTop: "2rem",
-              paddingBottom: "2rem",
+              paddingTop: "5rem",
+              paddingBottom: "5rem",
             }}
           >
             <div

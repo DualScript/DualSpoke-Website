@@ -40,8 +40,8 @@ export default function Home() {
               justifyContent: "center",
               overflow: "hidden",
               zIndex: 1,
-              paddingTop: "3rem",
-              paddingBottom: "3rem",
+              paddingTop: "4rem",
+              paddingBottom: "2rem",
             }}
           >
             <div
@@ -224,7 +224,8 @@ export default function Home() {
             id="products"
             style={{
               width: "100%",
-              padding: "3rem 0",
+              paddingTop: "2.5rem",
+              paddingBottom: "2.5rem",
               position: "relative",
               zIndex: 1,
             }}
@@ -239,10 +240,12 @@ export default function Home() {
               }}
             >
               <div
-                className="mb-12 inline-flex rounded-full px-4 py-1.5 text-[11px] uppercase tracking-[0.12em]"
+                className="rounded-full px-4 py-1.5 text-[11px] uppercase tracking-[0.12em]"
                 style={{
                   color: "var(--muted)",
                   border: "1px solid var(--border-mid)",
+                  display: "inline-block",
+                  marginBottom: "2rem",
                 }}
               >
                 Our Products
@@ -366,9 +369,12 @@ export default function Home() {
               }}
             >
               <div
-                className="mx-auto mb-8 h-px w-[120px]"
-                style={{ background: "var(--border)" }}
-                role="presentation"
+                style={{
+                  width: "100%",
+                  height: "1px",
+                  background: "var(--border)",
+                  marginBottom: "3rem",
+                }}
               />
               <h2
                 className="mb-6 text-[clamp(1.5rem,3vw,2.2rem)] font-medium"

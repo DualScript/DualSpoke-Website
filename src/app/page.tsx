@@ -40,8 +40,8 @@ export default function Home() {
               justifyContent: "center",
               overflow: "hidden",
               zIndex: 1,
-              paddingTop: "5rem",
-              paddingBottom: "2rem",
+              paddingTop: "3rem",
+              paddingBottom: "3rem",
             }}
           >
             <div
@@ -224,7 +224,7 @@ export default function Home() {
             id="products"
             style={{
               width: "100%",
-              padding: "2rem 0 4rem 0",
+              padding: "3rem 0",
               position: "relative",
               zIndex: 1,
             }}
@@ -351,7 +351,7 @@ export default function Home() {
           <section
             style={{
               width: "100%",
-              padding: "4rem 0",
+              padding: "3rem 0",
               position: "relative",
               zIndex: 1,
             }}

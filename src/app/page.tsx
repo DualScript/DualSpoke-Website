@@ -31,8 +31,24 @@ export default function Home() {
         </nav>
 
         <main>
-          <section className="relative z-[1] min-h-[100dvh]">
-            <div className="flex min-h-[100dvh] flex-col items-center justify-center px-8 text-center">
+          <section
+            className="overflow-hidden"
+            style={{ position: "relative", height: "100dvh", zIndex: 1 }}
+          >
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                textAlign: "center",
+                width: "100%",
+                height: "100dvh",
+                padding: "0 2rem",
+                position: "relative",
+                zIndex: 1,
+              }}
+            >
             <div
               className="animate-fade-up mb-10 w-full"
               style={{
@@ -176,25 +192,58 @@ export default function Home() {
             </div>
 
             <div
-              className="absolute bottom-[2.5rem] left-1/2 -translate-x-1/2"
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                bottom: "2rem",
+                left: "50%",
+                transform: "translateX(-50%)",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: "6px",
+                pointerEvents: "none",
+                zIndex: 2,
+              }}
             >
-              <div
-                className="animate-fade-up flex flex-col items-center gap-2"
-                style={{ animationDelay: "1.2s" }}
+              <span
+                className="text-[9px] uppercase tracking-[0.2em]"
+                style={{
+                  color: "var(--muted)",
+                  fontFamily: "DM Mono, monospace",
+                }}
               >
-                <span
-                  className="text-[10px] uppercase tracking-[0.15em]"
-                  style={{ color: "var(--muted)" }}
-                >
-                  scroll
-                </span>
-                <div className="scroll-line" aria-hidden="true" />
-              </div>
+                SCROLL
+              </span>
+              <div
+                style={{
+                  width: "1px",
+                  height: "28px",
+                  background: "var(--accent)",
+                  opacity: 0.5,
+                  animation: "linePulse 2s ease-in-out infinite",
+                }}
+              />
             </div>
           </section>
 
-          <section id="products" className="w-full">
-            <div className="mx-auto w-full max-w-[1100px] px-8 py-28">
+          <section
+            id="products"
+            style={{
+              width: "100%",
+              padding: "6rem 0",
+              position: "relative",
+              zIndex: 1,
+            }}
+          >
+            <div
+              style={{
+                maxWidth: "1100px",
+                width: "100%",
+                margin: "0 auto",
+                padding: "0 2rem",
+              }}
+            >
               <div
                 className="mb-12 inline-flex rounded-full px-4 py-1.5 text-[11px] uppercase tracking-[0.12em]"
                 style={{
@@ -206,9 +255,11 @@ export default function Home() {
               </div>
 
               <div
-                className="grid gap-6"
                 style={{
+                  display: "grid",
                   gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+                  gap: "1.5rem",
+                  width: "100%",
                 }}
               >
                 <article className="product-card">
@@ -303,8 +354,23 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="w-full">
-            <div className="mx-auto w-full max-w-[720px] px-8 py-28 text-center">
+          <section
+            style={{
+              width: "100%",
+              padding: "6rem 0",
+              position: "relative",
+              zIndex: 1,
+            }}
+          >
+            <div
+              style={{
+                maxWidth: "720px",
+                width: "100%",
+                margin: "0 auto",
+                padding: "0 2rem",
+                textAlign: "center",
+              }}
+            >
               <div
                 className="mx-auto mb-16 h-px w-[120px]"
                 style={{ background: "var(--border)" }}

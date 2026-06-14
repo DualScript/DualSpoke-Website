@@ -98,10 +98,12 @@ body::after {
 @keyframes linePulse {
   0%,
   100% {
-    opacity: 0.35;
+    opacity: 0.5;
+    transform: scaleY(1);
   }
   50% {
-    opacity: 1;
+    opacity: 0.15;
+    transform: scaleY(0.6);
   }
 }
 

@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import InterestForm from './components/InterestForm'
 
 export default function Home() {
   return (
@@ -387,27 +386,6 @@ export default function Home() {
                 From financial markets to creative trades.
               </p>
             </div>
-          </section>
-
-          <section
-            style={{
-              width: '100%',
-              padding: '2rem 2rem',
-              position: 'relative',
-              zIndex: 1,
-            }}
-          >
-            <div
-              style={{
-                width: '100%',
-                height: '1px',
-                background: 'var(--border)',
-                marginBottom: '4rem',
-                maxWidth: '720px',
-                margin: '0 auto 4rem',
-              }}
-            />
-            <InterestForm />
           </section>
         </main>
 

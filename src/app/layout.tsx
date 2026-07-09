@@ -20,11 +20,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "DualSpoke — Vertical Software for Professionals",
     description: "DualSpoke builds purpose-built software tools for professionals.",
-    url: "https://www.dualscript.io",
+    url: "https://www.dualspoke.com",
     siteName: "DualSpoke",
     images: [
       {
-        url: "https://www.dualscript.io/og-image.png",
+        url: "https://www.dualspoke.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "DualSpoke — Vertical Software for Professionals",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "DualSpoke — Vertical Software for Professionals",
     description: "DualSpoke builds purpose-built software tools for professionals.",
-    images: ["https://www.dualscript.io/og-image.png"],
+    images: ["https://www.dualspoke.com/og-image.png"],
   },
 };
 

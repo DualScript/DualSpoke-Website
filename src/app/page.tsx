@@ -317,11 +317,11 @@ export default function Home() {
                 Privacy Policy
               </Link>
               <a
-                href="mailto:info@dualscript.io"
+                href="mailto:info@dualspoke.com"
                 className="transition-colors duration-200 hover:text-[var(--accent)]"
                 style={{ color: "var(--muted)" }}
               >
-                info@dualscript.io
+                info@dualspoke.com
               </a>
             </div>
           </div>

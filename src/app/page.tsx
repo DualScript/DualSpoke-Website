@@ -307,7 +307,7 @@ export default function Home() {
             className="mx-auto flex max-w-[1100px] flex-col items-center gap-2 text-center text-xs md:flex-row md:items-center md:justify-between"
             style={{ color: "var(--muted)" }}
           >
-            <span>© 2026 DualSpoke LLC</span>
+            <span>© 2026 DualSpoke</span>
             <div className="flex items-center gap-4">
               <Link
                 href="/privacy-policy"

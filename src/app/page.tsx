@@ -19,7 +19,7 @@ export default function Home() {
               className="text-[15px] tracking-[0.08em]"
               style={{ color: "var(--text)" }}
             >
-              DualScript
+              DualSpoke
             </span>
             <a
               href="#products"
@@ -289,7 +289,7 @@ export default function Home() {
                 style={{ color: "var(--muted)" }}
               >
                 We build focused, vertical-specific software - not platforms,
-                not consulting, not AI wrappers. Every product DualScript ships
+                not consulting, not AI wrappers. Every product DualSpoke ships
                 solves one real problem for one defined professional audience.
                 From financial markets to creative trades.
               </p>
@@ -307,7 +307,7 @@ export default function Home() {
             className="mx-auto flex max-w-[1100px] flex-col items-center gap-2 text-center text-xs md:flex-row md:items-center md:justify-between"
             style={{ color: "var(--muted)" }}
           >
-            <span>© 2026 DualScript LLC</span>
+            <span>© 2026 DualSpoke LLC</span>
             <div className="flex items-center gap-4">
               <Link
                 href="/privacy-policy"

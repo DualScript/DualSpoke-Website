@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Privacy Policy | DualSpoke",
   description:
-    "How DualSpoke LLC collects, uses, and protects information on dualscript.io.",
+    "How DualScript LLC, doing business as DualSpoke, collects, uses, and protects information on dualspoke.com.",
 };
 
 export default function PrivacyPolicy() {
@@ -113,7 +113,7 @@ export default function PrivacyPolicy() {
                   </li>
                 </ul>
                 <p className="mt-3">
-                  This policy applies to dualscript.io only. If you use one of
+                  This policy applies to dualspoke.com only. If you use one of
                   our products directly, that product&apos;s privacy policy
                   governs how your data is handled.
                 </p>
@@ -232,7 +232,7 @@ export default function PrivacyPolicy() {
                   Children
                 </h2>
                 <p>
-                  dualscript.io is not directed at children under 13, and we do
+                  dualspoke.com is not directed at children under 13, and we do
                   not knowingly collect personal information from anyone under
                   that age. If you believe we have received information from a
                   child, please contact us and we will delete it.
@@ -258,7 +258,7 @@ export default function PrivacyPolicy() {
                   .
                 </p>
                 <p className="mt-3">
-                  DualSpoke LLC
+                  DualScript LLC, d/b/a DualSpoke
                   <br />
                   Wyoming, United States
                 </p>
@@ -274,7 +274,7 @@ export default function PrivacyPolicy() {
                 <p>
                   We may update this privacy policy from time to time. When we
                   do, we will revise the &ldquo;Last updated&rdquo; date at the
-                  top of this page. Your continued use of dualscript.io after
+                  top of this page. Your continued use of dualspoke.com after
                   any update constitutes acceptance of the revised policy.
                 </p>
               </section>
@@ -293,7 +293,7 @@ export default function PrivacyPolicy() {
           className="mx-auto flex max-w-[1100px] flex-col items-center gap-2 text-center text-xs md:flex-row md:items-center md:justify-between"
           style={{ color: "var(--muted)" }}
         >
-          <span>© 2026 DualSpoke LLC</span>
+          <span>© 2026 DualSpoke</span>
           <a
             href="mailto:info@dualspoke.com"
             className="transition-colors duration-200 hover:text-[var(--accent)]"

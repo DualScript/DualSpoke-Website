@@ -15,27 +15,27 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "DualScript — Vertical Software for Professionals",
-  description: "DualScript builds purpose-built software tools for professionals.",
+  title: "DualSpoke — Vertical Software for Professionals",
+  description: "DualSpoke builds purpose-built software tools for professionals.",
   openGraph: {
-    title: "DualScript — Vertical Software for Professionals",
-    description: "DualScript builds purpose-built software tools for professionals.",
+    title: "DualSpoke — Vertical Software for Professionals",
+    description: "DualSpoke builds purpose-built software tools for professionals.",
     url: "https://www.dualscript.io",
-    siteName: "DualScript",
+    siteName: "DualSpoke",
     images: [
       {
         url: "https://www.dualscript.io/og-image.png",
         width: 1200,
         height: 630,
-        alt: "DualScript — Vertical Software for Professionals",
+        alt: "DualSpoke — Vertical Software for Professionals",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "DualScript — Vertical Software for Professionals",
-    description: "DualScript builds purpose-built software tools for professionals.",
+    title: "DualSpoke — Vertical Software for Professionals",
+    description: "DualSpoke builds purpose-built software tools for professionals.",
     images: ["https://www.dualscript.io/og-image.png"],
   },
 };

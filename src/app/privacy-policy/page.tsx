@@ -67,7 +67,7 @@ export default function PrivacyPolicy() {
               className="mb-10 text-sm font-light"
               style={{ color: "var(--muted)" }}
             >
-              Last updated: June 13, 2026
+              Last updated: July 9, 2026
             </p>
 
             <div
@@ -75,15 +75,14 @@ export default function PrivacyPolicy() {
               style={{ color: "var(--muted)" }}
             >
               <p style={{ color: "var(--text)" }}>
-                DualSpoke is a trade name of DualScript LLC
-                (&ldquo;DualScript,&rdquo; &ldquo;we,&rdquo; &ldquo;us&rdquo;), a
-                Wyoming limited liability company, and is used in connection
-                with dualspoke.com. This policy explains what information we
-                collect when you visit our website, how we use it, and the
-                choices you have. We build vertical software products, with one
-                live offering and more in development. On this site, we keep a
-                small data footprint and collect only what we need to respond to
-                you and share occasional company updates.
+                DualSpoke, a DBA of DualScript LLC, a Wyoming limited
+                liability company (&ldquo;DualSpoke,&rdquo; &ldquo;we,&rdquo;
+                &ldquo;us&rdquo;), operates dualspoke.com. This policy
+                explains what information we collect when you visit our
+                website, how we use it, and the choices you have. We build
+                vertical software products, with one live offering and more
+                in development. On this site, we keep a small data footprint
+                and collect only what we need to respond to you.
               </p>
 
               <section>
@@ -101,21 +100,14 @@ export default function PrivacyPolicy() {
                     <strong style={{ color: "var(--text)", fontWeight: 400 }}>
                       Contact form
                     </strong>
-                    : your name, email address, and message when you reach out
-                    to us.
-                  </li>
-                  <li>
-                    <strong style={{ color: "var(--text)", fontWeight: 400 }}>
-                      Email signup form
-                    </strong>
-                    : your email address when you sign up to hear about DualSpoke
-                    products and updates.
+                    : your name, email address, and message when you reach
+                    out to us.
                   </li>
                 </ul>
                 <p className="mt-3">
-                  This policy applies to dualspoke.com only. If you use one of
-                  our products directly, that product&apos;s privacy policy
-                  governs how your data is handled.
+                  This policy applies to dualspoke.com only. If you use one
+                  of our products directly, that product&apos;s privacy
+                  policy governs how your data is handled.
                 </p>
               </section>
 
@@ -129,10 +121,6 @@ export default function PrivacyPolicy() {
                 <p className="mb-3">We use the information you provide to:</p>
                 <ul className="list-disc space-y-2 pl-5">
                   <li>Respond to inquiries you send through our contact form.</li>
-                  <li>
-                    Send occasional company and product updates to people who
-                    signed up for our email list.
-                  </li>
                 </ul>
                 <p className="mt-3">
                   That is the full list. We do not use your information for
@@ -149,7 +137,7 @@ export default function PrivacyPolicy() {
                   Third-party processors
                 </h2>
                 <p className="mb-3">
-                  Form submissions and email signups are stored using{" "}
+                  Contact form submissions are stored using{" "}
                   <strong style={{ color: "var(--text)", fontWeight: 400 }}>
                     Supabase
                   </strong>
@@ -157,12 +145,15 @@ export default function PrivacyPolicy() {
                   <strong style={{ color: "var(--text)", fontWeight: 400 }}>
                     Amazon Web Services (AWS)
                   </strong>
-                  . Supabase is our only third-party data processor. It stores
-                  data on our behalf so we can operate the website.
+                  . Supabase processes this data on our behalf and only as
+                  needed to operate the website.
                 </p>
                 <p>
-                  We do not sell your information. We do not share it with third
-                  parties for their marketing purposes.
+                  We do not sell your information. We do not share it with
+                  third parties for their marketing purposes. We may disclose
+                  information if required by law, court order, or valid
+                  legal process, or where necessary to protect the rights,
+                  safety, or property of our users, the public, or DualSpoke.
                 </p>
               </section>
 
@@ -174,11 +165,10 @@ export default function PrivacyPolicy() {
                   How long we keep your data
                 </h2>
                 <p>
-                  We retain your information only as long as needed for the
-                  purpose it was collected: to respond to your inquiry or to
-                  send you updates you asked for. When information is no longer
-                  needed, we delete it or anonymize it. We do not store personal
-                  data indefinitely.
+                  We retain your information only as long as needed to
+                  respond to your inquiry. When information is no longer
+                  needed, we delete it or anonymize it. We do not store
+                  personal data indefinitely.
                 </p>
               </section>
 
@@ -189,9 +179,9 @@ export default function PrivacyPolicy() {
                 >
                   Your rights
                 </h2>
-                <p>
-                  You may request access to, correction of, or deletion of your
-                  personal information at any time by emailing{" "}
+                <p className="mb-3">
+                  You may request access to, correction of, or deletion of
+                  your personal information at any time by emailing{" "}
                   <a
                     href="mailto:info@dualspoke.com"
                     className="transition-colors duration-200 hover:text-[var(--accent)]"
@@ -199,7 +189,26 @@ export default function PrivacyPolicy() {
                   >
                     info@dualspoke.com
                   </a>
-                  . We will respond to reasonable requests promptly.
+                  . We will respond to reasonable requests promptly and
+                  within any timeframe required by applicable law.
+                </p>
+                <p className="mb-3">
+                  <strong style={{ color: "var(--text)", fontWeight: 400 }}>
+                    California residents
+                  </strong>
+                  : under the California Consumer Privacy Act (CCPA/CPRA),
+                  you have the right to know what personal information we
+                  collect, to request access to or deletion of it, to opt
+                  out of the sale or sharing of personal information (we do
+                  not sell or share personal information as those terms are
+                  defined by the CCPA/CPRA), and not to be discriminated
+                  against for exercising your rights.
+                </p>
+                <p>
+                  Residents of other US states with comprehensive privacy
+                  laws may have similar rights, including the right to
+                  appeal a decision we make about your request. To exercise
+                  any right, use the contact details below.
                 </p>
               </section>
 
@@ -212,15 +221,13 @@ export default function PrivacyPolicy() {
                 </h2>
                 <p className="mb-3">
                   This site may set functional cookies required for basic
-                  operation. We do not currently use analytics or advertising
-                  tracking tools.
+                  operation. We do not currently use analytics or
+                  advertising tracking tools.
                 </p>
                 <p>
                   We may add analytics or similar tools in the future to
-                  understand how visitors use the site. If we do, we will update
-                  this policy and describe what is collected and why. Continued
-                  use of the site after an update means you accept the revised
-                  policy.
+                  understand how visitors use the site. If we do, we will
+                  update this policy and describe what is collected and why.
                 </p>
               </section>
 
@@ -232,35 +239,11 @@ export default function PrivacyPolicy() {
                   Children
                 </h2>
                 <p>
-                  dualspoke.com is not directed at children under 13, and we do
-                  not knowingly collect personal information from anyone under
-                  that age. If you believe we have received information from a
-                  child, please contact us and we will delete it.
-                </p>
-              </section>
-
-              <section>
-                <h2
-                  className="mb-3 text-lg font-medium"
-                  style={{ color: "var(--text)" }}
-                >
-                  Contact us
-                </h2>
-                <p>
-                  Questions about this policy or how we handle your data? Email{" "}
-                  <a
-                    href="mailto:info@dualspoke.com"
-                    className="transition-colors duration-200 hover:text-[var(--accent)]"
-                    style={{ color: "var(--accent)" }}
-                  >
-                    info@dualspoke.com
-                  </a>
-                  .
-                </p>
-                <p className="mt-3">
-                  DualScript LLC, d/b/a DualSpoke
-                  <br />
-                  Wyoming, United States
+                  dualspoke.com is not directed at children under 13, and we
+                  do not knowingly collect personal information from anyone
+                  under that age. If you believe we have received
+                  information from a child, please contact us and we will
+                  delete it.
                 </p>
               </section>
 
@@ -272,10 +255,46 @@ export default function PrivacyPolicy() {
                   Changes to this policy
                 </h2>
                 <p>
-                  We may update this privacy policy from time to time. When we
-                  do, we will revise the &ldquo;Last updated&rdquo; date at the
-                  top of this page. Your continued use of dualspoke.com after
-                  any update constitutes acceptance of the revised policy.
+                  We may update this privacy policy from time to time. When
+                  we do, we will revise the &ldquo;Last updated&rdquo; date
+                  at the top of this page. Your continued use of
+                  dualspoke.com after any update constitutes acceptance of
+                  the revised policy.
+                </p>
+              </section>
+
+              <section>
+                <h2
+                  className="mb-3 text-lg font-medium"
+                  style={{ color: "var(--text)" }}
+                >
+                  Contact us
+                </h2>
+                <p className="mb-3">
+                  Questions about this policy or how we handle your data?
+                  Email{" "}
+                  <a
+                    href="mailto:info@dualspoke.com"
+                    className="transition-colors duration-200 hover:text-[var(--accent)]"
+                    style={{ color: "var(--accent)" }}
+                  >
+                    info@dualspoke.com
+                  </a>
+                  .
+                </p>
+                <p>
+                  DualSpoke, a DBA of DualScript LLC
+                  <br />
+                  1621 Central Ave
+                  <br />
+                  Cheyenne, WY 82001
+                  <br />
+                  United States
+                </p>
+                <p className="mt-3">
+                  This policy is governed by the laws of the State of
+                  Wyoming, USA, without regard to its conflict of laws
+                  principles.
                 </p>
               </section>
             </div>

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Home() {
@@ -59,11 +60,12 @@ export default function Home() {
               }}
             >
               <div style={{ width: "min(420px, 85vw)", marginBottom: "2.5rem" }}>
-                <img
+                <Image
                   src="/dualspoke-logo.png"
                   alt="DualSpoke"
                   width={1316}
                   height={260}
+                  priority
                   style={{ width: "100%", height: "auto" }}
                 />
               </div>

@@ -67,7 +67,7 @@ export default function PrivacyPolicy() {
               className="mb-10 text-sm font-light"
               style={{ color: "var(--muted)" }}
             >
-              Last updated: July 9, 2026
+              Last updated: October 22, 2026
             </p>
 
             <div
@@ -92,18 +92,12 @@ export default function PrivacyPolicy() {
                 >
                   What we collect
                 </h2>
-                <p className="mb-3">
-                  We collect information only when you choose to give it to us:
+                <p>
+                  We do not ask you to submit personal information on this
+                  site. There are no forms, accounts, or sign-ups. If you
+                  email us at info@dualspoke.com, we receive your email
+                  address and anything you include in your message.
                 </p>
-                <ul className="list-disc space-y-2 pl-5">
-                  <li>
-                    <strong style={{ color: "var(--text)", fontWeight: 400 }}>
-                      Contact form
-                    </strong>
-                    : your name, email address, and message when you reach
-                    out to us.
-                  </li>
-                </ul>
                 <p className="mt-3">
                   This policy applies to dualspoke.com only. If you use one
                   of our products directly, that product&apos;s privacy
@@ -120,7 +114,7 @@ export default function PrivacyPolicy() {
                 </h2>
                 <p className="mb-3">We use the information you provide to:</p>
                 <ul className="list-disc space-y-2 pl-5">
-                  <li>Respond to inquiries you send through our contact form.</li>
+                  <li>Respond to emails you send us.</li>
                 </ul>
                 <p className="mt-3">
                   That is the full list. We do not use your information for
@@ -134,19 +128,17 @@ export default function PrivacyPolicy() {
                   className="mb-3 text-lg font-medium"
                   style={{ color: "var(--text)" }}
                 >
-                  Third-party processors
+                  Hosting and service providers
                 </h2>
                 <p className="mb-3">
-                  Contact form submissions are stored using{" "}
+                  This site is hosted by{" "}
                   <strong style={{ color: "var(--text)", fontWeight: 400 }}>
-                    Supabase
+                    Vercel
                   </strong>
-                  , a database service hosted on{" "}
-                  <strong style={{ color: "var(--text)", fontWeight: 400 }}>
-                    Amazon Web Services (AWS)
-                  </strong>
-                  . Supabase processes this data on our behalf and only as
-                  needed to operate the website.
+                  . Like most hosting providers, Vercel processes standard
+                  technical request data, such as IP addresses and browser
+                  type, to deliver the site and keep it secure. Emails you
+                  send us are handled by our email service provider.
                 </p>
                 <p>
                   We do not sell your information. We do not share it with
